@@ -94,14 +94,11 @@ def country_search():
         return render_template("country_search.html", phone_table=phone_table)
 
 
-
-
 @app.route('/code_search')
 def code_search():
     phone_table = PhoneTable.query.order_by(PhoneTable.code).all()
 
     return render_template("code_search.html", phone_table=phone_table)
-
 
 
 if __name__ == "__main__":
