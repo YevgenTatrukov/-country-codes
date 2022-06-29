@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ Країни}}
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Коди</h1>
+
+        <div class="alert-info">
+            {% for countrys in phone_table %}
+            <ul>
+
+                <li>
+                    <a href="/{{ countrys.id }}" class="btn btn-success">{{ countrys.code }}</a>
+                </li>
+
+            </ul>
+            {% endfor %}
+            <input type="text" name="country" id="country" class="form-control" placeholder="Введіть потрібний вам код"><br>
+            <a href="/{{ phone_table.id }}/del"class="btn btn-warning">Шукати</a>
+
+        </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ phone_table.country }}
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>{{ phone_table.country}}</h1>
+
+        <div class="alert-info">
+            <p>{{ phone_table.country }}, знаходиться у {{ phone_table.part_of_the_world }}. </p>
+            <p> код цієї країни: {{ phone_table.code }}</p>
+            <a href="/{{ phone_table.id }}/del"class="btn btn-danger">Видалити</a>
+            <a href="/{{ phone_table.id }}/update"class="btn btn-success">Редагувати</a>
+        </div>
+
+</div>
+{% endblock %}

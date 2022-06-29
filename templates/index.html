@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Шукаємо
+{% endblock %}
+
+{% block body %}
+
+<div class="container mt-5">
+    <h1>Не знаєте, який код країни у телефонуючої вам людини?</h1>
+
+    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+
+        <span class="fs-4">Що шукаємо?</span>
+
+      </a>
+
+      <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+          <h5>Не знайшли потрібну Вам інформацію?</h5>
+        <a class="btn btn-warning" href="/add">Додати</a>
+      </nav>
+    </div>
+        <a class="btn btn-success" href="/country_search">Країна</a>
+        <a class="btn btn-success" href="/code_search">Код</a>
+
+
+    <div class="view-content">
+
+         <div class="alert-info">
+
+    <table align="center">
+         <thead>
+      <tr>
+          <th>Країна</th>
+
+          <th>Частина світу</th>
+
+          <th>Код</th>
+
+      </tr>
+
+    </thead>
+        {% for elem in phone_table %}
+    <tbody>
+          <tr>
+              <td> <a href="/{{ elem.id }}" class="btn btn-success">{{ elem.country }}</a>
+
+              </td>
+
+              <td>{{ elem.part_of_the_world }}</td>
+
+              <td>{{ elem.code }}</td>
+          </tr>
+    </tbody>
+        {% endfor %}
+    </table>
+    </div>
+    </div>
+
+        </div>
+
+{% endblock %}

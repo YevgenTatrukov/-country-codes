@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Додавання
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Зміна</h1>
+    <form method="post">
+        <input type="text" name="country" id="country" class="form-control" value="{{ phone_table.country }}"><br>
+        <input name="part_of_the_world" id="part_of_the_world" class="form-control" value="{{ phone_table.part_of_the_world }}"><br>
+        <input name="code" id="code" class="form-control" value="{{ phone_table.code }}"><br>
+        <input type="submit" class="btn btn-success" value="Обновити">
+    </form>
+</div>
+{% endblock %}
